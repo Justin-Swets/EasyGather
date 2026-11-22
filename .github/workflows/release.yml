@@ -1,0 +1,29 @@
+# Builds the addon zip and publishes it whenever a version tag is pushed:
+#   git tag -a v1.0.0 -m "EasyGather 1.0.0" && git push origin v1.0.0
+#
+# Uploads to CurseForge (needs the CF_API_KEY repository secret and ## X-Curse-Project-ID in EasyGather.toc) and
+# creates the GitHub release with the zip attached. Packaging rules live in .pkgmeta.
+name: Package and release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write   # lets the packager create the GitHub release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history, so the packager can build the changelog since the previous tag
+
+      - name: Package and upload
+        uses: BigWigsMods/packager@v2

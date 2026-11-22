@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: EasyGather
+## Notes: Mining and Herbalism helper for WoW: Forever - required skill and AH price on node tooltips, saved node pins on the minimap and world map, scarce-drop rates and a gold per hour bar.
+## Author: jswets
+## Version: @project-version@
+## SavedVariables: EasyGatherDB
+## IconTexture: Interface\Icons\Trade_Mining
+## X-Category: Professions
+## OptionalDeps: Auctionator, AHledger
+
+Data.lua
+Core.lua

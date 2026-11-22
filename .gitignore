@@ -1,0 +1,12 @@
+# build output
+*.zip
+# OS / editor
+Thumbs.db
+.DS_Store
+*.swp
+
+# packager build output
+.release/
+
+# python cache
+__pycache__/
