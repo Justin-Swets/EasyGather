@@ -6,6 +6,7 @@
 ## SavedVariables: EasyGatherDB
 ## IconTexture: Interface\Icons\Trade_Mining
 ## X-Category: Professions
+## X-Curse-Project-ID: 1824258
 ## OptionalDeps: Auctionator, AHledger
 
 Data.lua
